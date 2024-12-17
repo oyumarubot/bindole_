@@ -1,0 +1,623 @@
+/* 共通リセット */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* ローディング時スクロール禁止 */
+}
+/* ローディング画面の背景色を変更 */
+#loading-screen {
+    background: #FBFBFB;
+}
+
+/* 共通の背景色を設定 */
+body {
+    background: #FBFBFB; /* 全体背景を#FBFBFBに設定 */
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* ローディング時スクロール禁止 */
+}
+
+
+/* ローディング画面 */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FBFBFB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-icon {
+    width: 100px; /* 適切なサイズに調整 */
+    height: auto; /* アスペクト比を保つ */
+}
+
+#main-content {
+    display: none;
+}
+
+#loading-screen.hidden {
+    display: none; /* ローディング終了後、ローディング画面を非表示 */
+}
+
+#main-content.visible {
+    display: block; /* ローディング終了後、メインコンテンツを表示 */
+}
+
+
+/* ローディング後、main_1を中央に表示する */
+.hero-image img {
+    width: 100%; /* 画面幅に合わせて画像を縮小 */
+    height: auto; /* アスペクト比を保つ */
+    object-fit: cover; /* 画像が切り取られないようにする（オプション） */
+    display: block;
+    margin: 0 auto; /* 画像を中央寄せ */
+    position: relative;
+    top: 0; /* 初期位置を画面上部に設定 */
+    opacity: 0; /* 初期状態を非表示 */
+    transform: translateY(30px); /* 下から浮き上がるように */
+    transition: opacity 0.8s ease-out, transform 5s ease-out; /* フェードインと移動のアニメーション */
+}
+
+/* 表示時のスタイル */
+.hero-image img.visible {
+    opacity: 1; /* 表示 */
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+
+/* TOPアイコン */
+#top-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* ハンバーガーメニュー */
+#menu-icon {
+    
+    height: 50px; /* 高さ */
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+#menu-icon span {
+    display: block;
+    width: 25px;
+    height: 1px;
+    background: #BA2329; /* 赤色 */
+    margin: 5px 0;
+}
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(251, 251, 251, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+#menu a {
+    margin: 10px 0;
+    text-decoration: none;
+    color: #231815;
+}
+
+/* メニュー開閉 */
+#menu.open {
+    transform: translateX(0);
+}
+
+/* main_2の画像とテキスト */
+#main-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    max-width: 1000px; /* 元の画像サイズに調整 */
+    margin-top: 90px; /* main_1とmain_2の間隔を90pxに */
+    margin-left: auto;
+    margin-right: auto; /* 水平方向のセンタリング */
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%; /* 画像の幅をコンテナ内で収める */
+    height: auto;
+    object-fit: contain; /* アスペクト比維持 */
+}
+
+.text-container {
+    position: absolute;
+    top: 50px; /* 画像の上からの距離 */
+    right: 50px; /* 画像の右からの距離 */
+    display: flex; /* Flexboxを使用 */
+    flex-direction: row; /* 横並びに変更 */
+    align-items: flex-start; /* 各テキストを上揃え */
+}
+
+.vertical-text {
+    writing-mode: vertical-rl; /* 縦書き */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold; /* Boldに設定 */
+    font-size: 1.5rem; /* フォントサイズ */
+    color: #231815; /* 黒色 */
+    letter-spacing: 0.3em; /* 文字間隔 */
+
+}
+
+.text1 {
+    order: 1; /* 最初に表示 */
+    color: #BA2329; /* 赤色に設定 */
+    font-size: 2rem; /* フォントサイズ */
+}
+
+.text2 {
+    order: 2; /* 2番目に表示 */
+}
+
+.text3 {
+    order: 3; /* 3番目に表示 */
+   
+}
+/* セクション全体 */
+#description {
+    margin: 150px auto;
+    max-width: 1000px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* 画像とテキストを中央揃え */
+}
+
+/* 横並びにするためのflex */
+.flex {
+    display: flex; /* 横並び */
+    align-items: center; /* テキストと画像を縦方向で中央揃え */
+}
+
+/* 左側の画像 */
+.intro-image {
+    width: auto;
+    height: 300px;
+    display: block;
+}
+
+/* 右側のテキスト */
+.description-text {
+    margin-left: 50px; /* 画像の右端から50px離す */
+    flex: 1;
+    font-family: 'Arial', sans-serif;
+    color: #231815;
+    line-height: 1.6;
+    position: relative; /* テキストの位置を調整 */
+}
+
+.description-text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+
+
+
+/* リンク */
+.description-text .link {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #231815;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+}
+
+.description-text .link:hover {
+    color: #BA2329;
+    border-bottom: 1px solid #BA2329;
+}
+/* １、2*/
+
+.container {
+    position: relative;
+    top: 10px; /* 上から10px開ける */
+    display: flex;
+    justify-content: center; /* 横に中央揃え */
+    gap: 300px; /* 画像間の間隔 */
+}
+
+.image-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 画像とテキストを中央揃え */
+}
+
+.container img {
+    max-width: 50%;
+    height: auto; /* 高さは自動調整で維持 */
+}
+
+.text {
+    text-align: center; /* テキストを中央揃え */
+    color: #BA2329; /* 赤色 */
+    font-size: 0.8rem; /* フォントサイズ0.8rem */
+    font-weight: bold; /* ボールドに変更 */
+    margin-top: 10px; /* 画像とテキストの間に10px余白 */
+}
+
+/* PROCESS*/
+.modal {
+    display: none; /* 初めは非表示 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明の背景 */
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+
+/* 実験セクション */
+#experiment-section {
+    margin-top: 150px;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 画面全体の高さ */
+    background-color: #FBFBFB; /* 背景色 */
+    overflow: hidden;
+}
+
+#experiment-content img {
+    width: 100%;
+    height: calc(100% - 20px); /* 画像の高さを調整（20px分下げる） */
+    object-fit: cover; /* 画面に収める */
+}
+
+.experiment-text {
+    position: relative; /* 画像の上に重ならないようにする */
+    top: 0;
+    margin-bottom: 20px; /* 画像との間隔を20px空ける */
+    text-align: left; /* 左揃え */
+    font-size: 0.8rem; /* 小さいフォントサイズ */
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #231815; /* 黒色 */
+    padding-left: 60px; /* 左側に余白 */
+}
+/* 実験セクションの直線 */
+.experiment-divider {
+    margin: 100px auto 0; /* 上に50pxの余白 */
+    width: calc(100% - 60px); /* 左右20pxずつ離れる */
+    height: 2px; /* 高さ2px */
+    background-color: #BA2329; /* 黒い線 */
+}
+
+
+/* セクション全体のスタイル */
+#neziri-section {
+    background-color: #FBFBFB; /* 背景色は指定の白 */
+    padding: 100px 20px; /* 上下: 50px, 左右: 20px */
+}
+
+/* コンテンツ全体を横並びに */
+.neziri-content {
+    display: flex;
+    justify-content: space-between; /* テキストと画像を左右に配置 */
+    align-items: center; /* 高さを揃える */
+    gap: 50px; /* テキストと画像の間隔 */
+    max-width: 1000px; /* main_2と揃えるための幅 */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* テキスト部分 */
+.neziri-text {
+    flex: 1; /* テキストのスペースを自動調整 */
+    font-weight: bold; /* テキストをすべてボールドに設定 */
+}
+
+.neziri-text p {
+    margin: 10px 0; /* 各テキスト間の間隔 */
+    font-size: 1.5rem; /* 統一されたフォントサイズ（大サイズ） */
+    color: #231815; /* 黒色 */
+}
+
+/* 赤文字 */
+.red-text  {
+    color: #BA2329!important; /* 赤色 */
+    font-weight: bold; 
+}
+
+/* 画像部分 */
+.neziri-image img {
+    height: 400px; /* 高さを450pxに固定 */
+    width: auto; /* アスペクト比を維持 */
+}
+
+
+.feature-text {
+    text-align: center; /* 中央揃え */
+    margin: 50px 0; /* 上下の余白 */
+    font-size: 1.5rem; /* フォントサイズ大 */
+    font-weight: bold; /* 太字 */
+    line-height: 2; /* 行間 */
+}
+
+.feature-text p {
+    margin: 0; /* デフォルトのマージンをリセット */
+}
+
+.red-text {
+    color: #BA2329; /* 赤色 */
+}
+
+/* NEJIMOJIセクション全体 */
+.nejimoji-section {
+    align-items: flex-end; /* 画像とテキストを下揃え */
+    display: flex; /* 横並び */
+    justify-content: space-between; /* コンテンツ間に余白 */
+    margin-top: 200px; /* 上の要素から100px離す */
+    max-width: 1000px; /* main_2.pngの幅に合わせる */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
+    
+}
+
+/* 左側画像 */
+.nejimoji-img {
+    height: 300px; /* 画像の高さ */
+    width: auto; /* 横幅自動調整 */
+    display: block; /* 余分な隙間を消す */
+    opacity: 1; /* 初期状態で画像は表示されている */
+    transition: opacity 1s ease-in-out; /* 2秒でフェードイン・フェードアウト */
+}
+
+
+
+
+/* 右側テキスト */
+.nejimoji-text {
+    max-width: 500px; /* テキストの最大幅 */
+    color: #231815; /* 指定された黒色 */
+}
+
+/* タイトル */
+.nejimoji-title {
+    margin-left: 20px; /* 画像とテキストの間に20pxのスペース */
+    font-size: 1.5rem; /* 大サイズ */
+    font-weight: bold; /* ボールド */
+    color: #BA2329; /* タイトルは赤色 */
+    margin-bottom: 50px; /* 下に余白 */
+}
+
+/* 説明文 */
+.nejimoji-description {
+   
+    margin-left: 20px; /* 画像とテキストの間に20pxのスペース */
+    font-size: 1.2rem; /* 中サイズ */
+    font-weight: normal; /* 通常フォント */
+    line-height: 1.6; /* 行間 */
+}
+
+/* patternセクション全体 */
+.pattern-section {
+    align-items: flex-end; /* 画像とテキストを下揃え */
+    display: flex; /* 横並び */
+    justify-content: space-between; /* コンテンツ間に余白 */
+    margin-top: 200px; /* 上の要素から200px離す */
+    max-width: 1000px; /* 幅の最大サイズ */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
+}
+
+/* 画像スタイル */
+.pattern-img {
+    height: 300px;
+    width: auto;
+    display: block;
+    transition: opacity 1s ease-in-out; /* 1秒でフェードイン・フェードアウト */
+}
+
+/* テキストエリア */
+.pattern-text {
+    max-width: 500px;
+    color: #231815; /* 指定された黒色 */
+}
+
+.pattern-title {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #BA2329; /* 赤色 */
+    margin-bottom: 50px;
+}
+
+.pattern-description {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* bindolesセクション全体 */
+
+/* bindolesセクション全体 */
+.bindoles-section {
+    align-items: flex-end; /* 画像とテキストを下揃え */
+    display: flex; /* 横並び */
+    justify-content: space-between; /* コンテンツ間に余白 */
+    margin-top: 200px; /* 上の要素から200px離す */
+    max-width: 1000px; /* 幅の最大サイズ */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
+}
+
+/* 画像スタイル */
+.bindoles-img {
+    height: 300px;
+    width: auto;
+    display: block;
+    transition: opacity 1s ease-in-out; /* 1秒でフェードイン・フェードアウト */
+}
+
+/* テキストエリア */
+.bindoles-text {
+    max-width: 500px;
+    color: #231815; /* 指定された黒色 */
+}
+
+.bindoles-title {
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #BA2329; /* 赤色 */
+    margin-bottom: 50px;
+}
+
+.bindoles-description {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* barabaraセクション */
+.barabara-section {
+    margin-top: 100px; /* 上のセクションから100px離す */
+    width: 100%; /* 画面横幅に合わせる */
+}
+
+.barabara-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* futureセクション全体 */
+.future-section {
+    display: flex; /* 横並び */
+    justify-content: center; /* セクションを中央揃え */
+    align-items: center; /* 垂直方向で中央揃え */
+    max-width: 1000px; /* 横幅最大1000px */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px; /* 上に余白を追加 */
+}
+
+/* 画像のスタイル */
+.future-img {
+    width: 60%; 
+    height: auto; /* 高さは自動調整 */
+    display: block;
+    margin-right: 50px; /* 画像とテキストの間隔を50pxに設定 */
+}
+
+/* テキスト部分 */
+.future-text {
+    flex: 1; /* テキストのスペースを自動調整 */
+    font-weight: bold; /* テキストをボールドに設定 */
+}
+
+/* 各テキスト */
+.future-text p {
+    margin: 10px 0; /* 各テキスト間の間隔 */
+    font-size: 1.5rem; /* 統一されたフォントサイズ（大サイズ） */
+    color: #231815; /* 黒色 */
+}
+
+/* 赤文字 */
+.red-text {
+    color: #BA2329 !important; /* 赤色 */
+    font-weight: bold; 
+}
+
+/* セクション全体 */
+.code-text-section {
+    display: flex; /* 横並び */
+    justify-content: center; /* セクションを中央揃え */
+    align-items: flex-start; /* 上に揃える */
+    max-width: 1000px; /* セクションの最大幅 */
+    margin: 150px auto 50px; /* セクションを上から150px下に移動 */
+}
+
+/* コードボックス */
+.code-box {
+    background-color: #D9D9D9; /* 背景色をD9D9D9に設定 */
+    padding: 20px; /* 内側の余白 */
+    width: 50%; /* 左側に50%の幅 */
+    height: 500px; /* 高さを500pxに設定 */
+    overflow-y: auto; /* 縦スクロールを表示 */
+    white-space: nowrap; /* コードを1行で表示 */
+}
+
+/* コード内のフォントスタイル */
+pre {
+    font-family: monospace; /* モノスペースフォントを使用 */
+    font-size: 0.8rem; /* フォントサイズを0.8remに設定 */
+    margin: 0; /* マージンをリセット */
+}
+
+/* テキストボックス */
+.text-box {
+    width: 50%; /* 右側に50%の幅 */
+ 
+    
+    padding-left: 30px; /* 左の余白 */
+    text-align: left; /* 左揃え */
+    display: flex; /* 上揃え */
+    flex-direction: column; /* 縦並び */
+    justify-content: flex-start; /* 上揃え */
+    height: 500px; /* 高さを500pxに設定 */
+}
+
+/* 各テキスト */
+.bold-text {
+    font-size: 1.5rem; /* フォントサイズ */
+    font-weight: bold; /* ボールド */
+}
+
+.text-box p {
+    font-size: 1.2rem; /* フォントサイズ */
+    margin: 10px 0; /* 各テキスト間の間隔 */
+    line-height: 1.5; /* 行間 */
+    color: #231815; /* 黒色 */
+}
+
+
+/* 画像 */
+.code-intro-img {
+    margin-top: 10px; /* 画像の上に余白 */
+    max-width: 100%; /* 画像を幅に合わせる */
+    height: auto; /* 画像の高さを自動調整 */
+}

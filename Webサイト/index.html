@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>穴製本-Bindole-</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ローディング画面 -->
+<div id="loading-screen">
+    <img src="assets/images/loading.png" alt="Loading Image" class="loading-icon">
+</div>
+
+
+    <!-- メイン画面 -->
+    <div id="main-content" class="hidden">
+        <!-- 左上のTOPアイコン -->
+        <div id="top-icon">
+            <img src="assets/images/logo.png" alt="TOPアイコン">
+        </div>
+
+        <!-- 右上のハンバーガーメニュー -->
+        <div id="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="menu" class="hidden">
+            <a href="#description">ABOUT</a> <!-- description セクションに飛ぶ -->
+            <a href="#experiment-section">EXPERIMENT</a>
+            <a href="#neziri-section">OUTPUT</a>
+            <a href="#future-section">FUTURE</a>
+</div>
+
+        <!-- メイン画像 (main_1.png) -->
+        <div class="hero-image">
+            <img src="assets/images/main_1.png" alt="main image 1">
+        </div>
+
+        <div id="main-image-container" class="hidden">
+            <div class="image-container">
+                <img src="assets/images/main_2.png" alt="main image 2">
+            </div>
+            <div class="text-container">
+                <div class="vertical-text text1">穴製本</div>
+                <div class="vertical-text text2">新しい造形手法</div>
+                <div class="vertical-text text3">天糊製本を応用した</div>
+            </div>
+        </div>
+        
+        
+        </div>
+    </div>
+
+    <!--穴に糊を流して綴じる、穴製本-->
+    <section id="description">
+        <div class="description-container flex">
+            <!-- 左側の画像 -->
+            <div class="description-image">
+                <img src="assets/images/intro_1.png" alt="天糊製本と穴製本の説明" class="intro-image">
+            </div>
+    
+            <!-- 右側のテキスト -->
+            <div class="description-text">
+                <h2>
+                    穴に糊を流して綴じる、
+                    <span class="highlight">
+                        <span id="circle" class="hole-circle">穴製本</span>
+                    </span>
+                </h2>
+                <p class="text-content">
+                    穴製本とは、天糊製本から着想を得た製本方法です。天糊製本は、背面に糊をつけますが、穴製本では、紙に開けた共通の穴の側面に糊をつけます。3DCADを用いて制作したデータを、紙の厚さに分割し、断面のパスをレーザーでカットします。そして、紙を重ねて穴に糊を流します。その後、治具に積層した紙を入れ、クランプで固定し乾燥させます。
+                </p>
+                <a href="https://jam-p.com/blog/tennori/" class="link">天糊製本とは▶︎</a>
+            </div>
+        </div>
+    </section>
+
+<!-- 1,2-->
+<div class="container">
+    <div class="image-text">
+        <img src="assets/images/1.png" alt="Image 1" id="image1">
+        <div class="text">PROCESS</div>
+    </div>
+    <div class="image-text">
+        <img src="assets/images/2.png" alt="Image 2" id="image2">
+        <div class="text">HOW TO MAKE</div>
+    </div>
+</div>
+
+<!--process image -->
+<div id="modal1" class="modal">
+    <img src="assets/images/process.png" alt="Process Image" class="modal-content" id="modal-img1">
+</div>
+
+<!-- howto image -->
+<div id="modal2" class="modal">
+    <img src="assets/images/howto.png" alt="How to Image" class="modal-content" id="modal-img2">
+</div>
+
+
+
+    
+<!-- 実験セクション -->
+<section id="experiment-section">
+    <div class="experiment-text">\\実験の全貌を除いて/</div>
+    <div id="experiment-content">
+        <img src="assets/images/zikken.png" alt="実験画像">
+    </div>
+</section>
+
+  <!-- 直線 -->
+  <div class="experiment-divider"></div>
+
+<!-- Neziriセクション -->
+<div id="neziri-section">
+    <div class="neziri-content">
+        <div class="neziri-text">
+            <p>穴製本から生まれた形、</p>
+            <p class="red-text">Bindole -ビンドール-</p>
+            <p>は何ができる？</p>
+        </div>
+        <div class="neziri-image">
+            <img src="assets/images/neziri_touka.png" alt="Bindoleの画像">
+        </div>
+    </div>
+</div>
+
+<!-- 特徴のテキスト -->
+<div class="feature-text">
+    <p>私が見つけた特徴は</p>
+    <p><span class="red-text">捻る</span>動きができること</p>
+    <p><span class="red-text">豊かな造形</span>ができること</p>
+</div>
+
+
+<!-- NEJIMOJI セクション -->
+<div class="nejimoji-section">
+    <img id="taipo-image" class="nejimoji-img" src="assets/images/taipo.png" alt="taipo image">
+
+    <div class="nejimoji-text">
+        <p class="nejimoji-title">1.NEJIMOJI</p>
+        <p class="nejimoji-description">
+            捻って生まれるタイポグラフィ、NEJIMOJI。ビンドールは糊の延性を活かして、穴を中心に捻ることができます。それにより、表面に文字を塗装し、捻ることで新しい文字を作ることができるのです。
+        </p>
+    </div>
+</div>
+
+<div class="pattern-section">
+    <img src="assets/images/pattern.png" alt="Pattern Image" class="pattern-img">
+    <div class="pattern-text">
+        <h2 class="pattern-title">2.NEJIpattern</h2>
+        <p class="pattern-description">
+            捻ったビンドールの表面を模様として活かす。造形の陰影と、紙一枚一枚によるスラッシュが新しいパターンを生みます。
+        </p>
+    </div>
+</div>
+
+<div class="bindoles-section">
+    <img src="assets/images/bindoles.png" alt="Bindoles Image" class="bindoles-img">
+    <div class="bindoles-text">
+        <h2 class="bindoles-title">3.Bindoles</h2>
+        <p class="bindoles-description">
+            3Dプリンターのように積層によって有機的な形を作ることもできます。穴を２つ開けることで、ドーナツ形を作ることも。
+        </p>
+    </div>
+</div>
+
+
+<div class="barabara-section">
+    <img src="assets/images/barabara.png" alt="Barabara Image" class="barabara-img">
+</div>
+
+<div id="future-section" class="future-section">
+    <img src="assets/images/future.png" alt="Future Image" class="future-img">
+    <div class="future-text">
+        <p>これからの</p>
+        <p class="red-text">Bindole -ビンドール-</p>
+        <p>は何ができる？</p>
+    </div>
+</div>
+
+
+<!-- コードセクション -->
+<div class="code-text-section" id="code-text-section" >
+    <div class="code-box">
+        <pre><code>import trimesh
+import numpy as np
+import svgwrite
+
+# 3Dモデルを読み込み
+mesh = trimesh.load('model.stl')
+
+# STLモデルの高さ範囲を確認
+z_min, z_max = mesh.bounds[0][2], mesh.bounds[1][2]
+print(f"STLモデルの高さ範囲: z_min={z_min}, z_max={z_max}")
+
+# スライスする高さ (1mmごと)
+slice_heights = np.arange(z_min, z_max + 1, 1.0)
+
+# SVGファイルのページ設定
+page_width = 297  # A4横幅（mm）
+page_height = 210  # A4高さ（mm）
+margin = 5  # マージン（mm）
+
+# 配置関連の設定
+x_offset = margin
+y_offset = margin
+row_height = 0
+spacing = 2  # 図形間の間隔（mm）
+page_number = 1
+
+# 新しいSVGページを作成
+def create_new_page(page_num):
+    return svgwrite.Drawing(f'slices_page_{page_num}.svg', size=(f'{page_width}mm', f'{page_height}mm'))
+
+# 最初のSVGページを作成
+dwg = create_new_page(page_number)
+
+# 各スライスを処理
+for i, height in enumerate(slice_heights):
+    # 指定の高さでスライス
+    slice = mesh.section(plane_origin=[0, 0, height], plane_normal=[0, 0, 1])
+    
+    if slice is None or slice.is_empty:
+        print(f"スライス失敗: 高さ {height} mm")
+        continue
+    
+    # スライスの輪郭を取得
+    slice_2d, _ = slice.to_planar()
+    
+    # スライスの2Dバウンディングボックスを取得
+    bounds = slice_2d.bounds
+    slice_width = bounds[1][0] - bounds[0][0]
+    slice_height = bounds[1][1] - bounds[0][1]
+    
+    # 現在の位置に配置可能か確認
+    if x_offset + slice_width + margin > page_width:
+        # 横幅を超えた場合、次の行に移動
+        x_offset = margin
+        y_offset += row_height + spacing
+        row_height = 0
+    
+    if y_offset + slice_height + margin > page_height:
+        # 高さを超えた場合、新しいページを作成
+        dwg.save()
+        page_number += 1
+        dwg = create_new_page(page_number)
+        x_offset = margin
+        y_offset = margin
+        row_height = 0
+    
+    # スライスデータをSVGに追加
+    for path in slice_2d.polygons_full:
+        translated_path = [(x + x_offset, y + y_offset) for x, y in path.exterior.coords]
+        dwg.add(dwg.polygon(points=translated_path, stroke='black', fill='none', stroke_width=0.1))
+    
+    # x方向のオフセットを更新
+    x_offset += slice_width + spacing
+    # 行の高さを更新
+    row_height = max(row_height, slice_height)
+
+# 最後のページを保存
+dwg.save()
+
+print(f"SVGファイルにスライスを出力しました。合計ページ数: {page_number}")
+</code></pre>
+    </div>
+    <div class="text-box">
+        <p class="bold-text">見えてる形のパラレルワールド。</p>
+        <p class="bold-text">-形の再構築-</p>
+        <p>紙の厚さにカットしたデータを作ることのできるプログラムコードを作成。</p>
+        <p>それをランダムに積層し直して製本することで、新しい形に再構成ができないか？と考えています。</p>
+        <img src="assets/images/code_intro.png" alt="Code Introduction Image" class="code-intro-img">
+    </div>
+</div>
+
+
+
+    <script src="script.js"></script>
+
+    
+
+</body>
+</html>
